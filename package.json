@@ -1,0 +1,19 @@
+{
+  "name": "b-moynihan-business-card",
+  "version": "2.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "./cli.sh",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cowsay": "^1.5.0",
+    "lodash.omit": "^4.5.0",
+    "os": "^0.1.2",
+    "prettyjson": "^1.2.5"
+  }
+}
