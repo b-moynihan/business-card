@@ -1,6 +1,5 @@
 const format = require('./lib/format')
 const data = require('./lib/data')
 
-module.exports = ({ json, cow = 'octopus' }) => json
-  ? JSON.stringify(data)
-  : format({ data, cow })
+// Define default cow and pass to format module
+module.exports = ({ cow="octopus", rand }) => format({ data, cow, rand})

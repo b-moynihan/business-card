@@ -1,27 +1,24 @@
 #!/usr/bin/env node
-
-const minimist = require('minimist')
-const pkg = require('..')
-
 'use strict'
-
-const boxen = require("boxen");
-const chalk = require("chalk");
+const minimist = require('minimist')
+const questions = require('./lib/questions')
+const pkg = require('.')
 const inquirer = require("inquirer");
-const clear = require("clear");
-const open = require("open");
-const fs = require('fs');
-const request = require('request');
-const path = require('path');
-const ora = require('ora');
-const cliSpinners = require('cli-spinners');
-clear();
+const chalk = require("chalk");
 
-const prompt = inquirer.createPromptModule();
-
+// Parse input flags
 const options = {
-  alias: { json: 'j', cow: 'f' }
+  alias: { cow: 'f', rand: 'r' }
 }
 const argv = minimist(process.argv.slice(2), options)
 
-console.log(pkg(argv))
+// Generate random hex colour for cow 
+const randomColour = "#000000".replace(/0/g, function(){
+  return (~~(Math.random()*16)).toString(16);
+});
+
+console.log(chalk.hex(randomColour)(pkg(argv)))
+
+// Ask questions and perform respective actions
+const prompt = inquirer.createPromptModule();
+prompt(questions).then(answer => answer.action());
