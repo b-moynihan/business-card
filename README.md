@@ -7,9 +7,14 @@ If you enjoy this project please donate a ⭐ on Github :)
 
 You'll be prompted to answer a few questions regarding reaching out to me, feel free to choose any of the available options and get in touch! 
 
+## Install
+```
+npm i b-moynihan-business-card
+```
+
 ## Command
 ```
-npx b-moynihan-business-card
+npx b-moynihan
 ```
 
 ## Args
